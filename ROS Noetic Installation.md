@@ -54,7 +54,7 @@ Note: Do not use ‘sudo’ command in the next step, as it may result in differ
 ```bash
 rosdep update
 ```
-## Additional Installation for Krishi Bot Theme
+## Additional Installation
 - Caktin tools
 ```bash
 sudo apt-get install ros-noetic-catkin python3-catkin-tools
