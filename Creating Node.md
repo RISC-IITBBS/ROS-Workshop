@@ -73,3 +73,45 @@ You should get some output like this,
 ```
 [INFO] [1601277063.968749]: Hello World!
 ```
+
+### To create an executable python file
+After creating a package, make a new scripts folder to store all the python files.
+```bash
+cd ~/catkin_ws/src/<package>
+mkdir scripts
+```
+To create a python script, first, navigate inside the scripts folder using the cd command, and then create the script using the touch command.
+```
+cd scripts
+touch filename.py
+```
+Now you can edit your python file.
+
+Before running a new python file, you have to make it executable by running the following command-
+```bash
+cd ~/catkin_ws/src/<package>/scripts
+chmod +x filename.py
+```
+### To create an executable cpp file
+After creating a package, create a src folder to store all the cpp files in that folder.
+```bash
+cd ~/catkin_ws/src/<package>
+mkdir src
+```
+To create a cpp file, first, navigate inside the src folder using the cd command, and then create the file using the touch command.
+```
+cd src
+touch filename.cpp
+```
+Now you can edit your cpp file, but for making it executable we have to edit the CMakeLists.txt file which is present in the package.
+
+Add these lines at the bottom of CMakeLists.txt file,
+```bash
+add_executable(filename src/filename.cpp)
+target_link_libraries(filename ${catkin_LIBRARIES})
+```
+Then run this command,
+```
+cd ~/catkin_ws
+catkin build
+```
